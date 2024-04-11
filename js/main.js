@@ -521,6 +521,14 @@ class FormLead {
         // Por exemplo, buscar horários específicos da unidade ou usar os horários padrões
         // Este exemplo apenas processa horários padrões, que você pode ajustar conforme necessário
         this.processarHorariosPadroes();
+
+        if (
+            this.horarioElement.parentElement.classList.contains("mkt-hide")
+            && (this.regiaoElement.value !== "" && this.regiaoElement.value !== "Selecione uma região")
+        ) {
+            // Mostrar o elemento de horários
+            this.horarioElement.parentElement.classList.remove("mkt-hide");
+        }
     }
 
     /**
