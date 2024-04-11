@@ -301,16 +301,13 @@ class GoogleSheetManager {
         try {
             const response = await fetch(url, params);
             const result = await response.text();
-            console.log(result);
             if (result === "Dados inseridos com sucesso!") {
-                console.log(
-                    "Dados enviados para o Google Sheet com sucesso."
-                );
+                console.info("Dados enviados para o Google Sheet com sucesso.");
             } else {
-                console.log("Falha ao enviar dados para o Google Sheet.");
+                console.error("Falha ao enviar dados para o Google Sheet.");
             }
         } catch (error) {
-            console.log("Erro ao enviar para o Google Sheet: ", error);
+            console.error("Erro ao enviar para o Google Sheet: ", error);
         }
     }
 }
@@ -469,7 +466,6 @@ class FormLead {
         // Verifica se this.regiaoElement.selectedOptions[0] existe
         const selectUnit = this.regiaoElement.selectedOptions[0];
         const defaultHorarios = selectUnit && selectUnit.dataset.horarios ? false : true;
-        console.log(defaultHorarios);
         this.horarioElement.innerHTML = ""; // Limpa as opções anteriores
         // Adiciona uma opção desabilitada como placeholder
         const disabledOption = document.createElement("option");
@@ -532,7 +528,6 @@ class FormLead {
      * @param {boolean} sigla - Se deve pegar todas as unidades ou não
      */
     async getUnidades(sigla = false) {
-
         try {
             // Validação do formulário
             this.validateForm();
@@ -544,7 +539,7 @@ class FormLead {
                 },
                 params: {
                     produto: produtoSelecionado,
-                    sigla: sigla == true ? this.r : '',
+                    sigla: sigla ? this.r : '',
                 },
             });
 
@@ -619,6 +614,7 @@ class FormLead {
     }
 
     limparRegiao() {
+        this.r = false; // Limpa a sigla da região
         this.getUnidades(); // Repopula com todas as unidades disponíveis
     }
 
@@ -631,7 +627,7 @@ class FormLead {
             for (let key in this.idadesByCurso) {
                 if (this.idadesByCurso[key].includes(selectedIdade)) {
                     this.cursoElement.value = key;
-                    this.getUnidades(true);
+                    this.getUnidades(this.r);
                     break;
                 }
             }
@@ -739,7 +735,6 @@ class FormLead {
 
             // Preparar o data.lead para o envio
             data.lead.horario = this.horarioElement.value;
-            console.log(data);
             // Envia dados para o Google Sheet
             await GoogleSheetManager.sendToSheet(data.lead);
             this.postSubmitAction(data);
