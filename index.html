@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lead Form</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+    <div class="mkt-fusion-form-wrapper">
+        <form name="lead" id="formLead" class="fusion-form">
+            <div class="mkt-fusion-row">
+                <div class="mkt-fusion-column">
+                    <div class="mkt-form-field">
+                        <label for="candidato">Nome Completo do Candidato<abbr class="mkt-fusion-form-element-required"
+                                title="Requerido">*</abbr></label>
+                        <input type="text" name="candidato" id="candidato" class="mkt-form-input" required
+                            placeholder="Luís Alves de Lima e Silva*" />
+                    </div>
+
+                    <div class="mkt-form-field">
+                        <label for="idade">Idade<abbr class="mkt-fusion-form-element-required"
+                                title="Requerido">*</abbr></label>
+                        <select id="idade" name="idade" class="mkt-form-input" required>
+                            <option value="" disabled selected>Selecione a idade</option>
+                            <!-- Idade options here -->
+                        </select>
+                    </div>
+
+                    <div class="mkt-form-field">
+                        <label for="responsavel">Nome Completo do Responsável<abbr
+                                class="mkt-fusion-form-element-required" title="Requerido">*</abbr></label>
+                        <input type="text" name="responsavel" id="responsavel" class="mkt-form-input" required
+                            placeholder="Francisco de Lima e Silva*" />
+                    </div>
+
+                    <div class="mkt-form-field">
+                        <label for="whatsapp">WhatsApp<abbr class="mkt-fusion-form-element-required"
+                                title="Requerido">*</abbr></label>
+                        <input type="tel" name="whatsapp" id="whatsapp" class="mkt-form-input" required
+                            placeholder="11 90000-0000*" pattern=".{12,13}" minlength="12" />
+                    </div>
+
+                    <div class="mkt-form-field mkt-hide">
+                        <label for="regiao">Unidade<abbr class="mkt-fusion-form-element-required"
+                                title="Requerido">*</abbr></label>
+                        <select id="regiao" name="regiao" class="mkt-form-input" required>
+                            <option value="" disabled selected>Selecione a unidade</option>
+                            <!-- Unidade options here -->
+                        </select>
+                    </div>
+
+                    <div class="mkt-fusion-alert mkt-hide" id="alert_unidade">
+                        <span class="alert-icon"><i class="awb-icon-info-circle" aria-hidden="true"></i></span>
+                        <span class="fusion-alert-content">UNIDADE<strong class="nome_regiao">DIADEMA</strong>—<a
+                                class="mkt-cursor">Alterar unidade</a>.</span>
+                    </div>
+
+                    <div class="mkt-form-field">
+                        <label for="horario">Horário da palestra<abbr class="mkt-fusion-form-element-required"
+                                title="Requerido">*</abbr></label>
+                        <select id="horario" name="horario" class="mkt-form-input" required>
+                            <option value="" disabled selected>Selecione o melhor horário</option>
+                            <!-- Horario options here -->
+                        </select>
+                    </div>
+
+                    <div class="mkt-form-field">
+                        <button type="submit" id="submit_lead" class="mkt-form-submit">
+                            <span class="fusion-button-text">Continuar</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hidden inputs -->
+            <input type="hidden" id="utm_source" name="utm_source" value="Orgânico" />
+            <input type="hidden" id="utm_medium" name="utm_medium" value="Orgânico" />
+            <input type="hidden" id="utm_campaign" name="utm_campaign" value="Orgânico" />
+            <input type="hidden" id="nome_regiao" name="nome_regiao" />
+            <input type="hidden" id="curso" name="curso" value="16" />
+            <input type="hidden" id="franquia" name="franquia" value="IPMIL" />
+            <input type="hidden" id="site" name="site" />
+            <input type="hidden" id="site_referrer" name="site_referrer" />
+            <input type="hidden" id="id_event" name="id_event" />
+        </form>
+
+        <div class="mkt-fusion-row mkt-hide" id="confirm_lead">
+            <div class="mkt-fusion-column">
+                <h5 class="mkt-title-heading-center">Fale agora com um especialista em Carreiras Militares!</h5>
+                <div class="mkt-text-center">
+                    <p>Clique no botão abaixo</p>
+                    <a class="mkt-fusion-button" id="btn_link_wpp" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-whatsapp fab button-icon-left" aria-hidden="true"></i><span>WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/vanilla-masker@1.1.1/build/vanilla-masker.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
