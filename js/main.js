@@ -522,6 +522,7 @@ class FormLead {
         // Este exemplo apenas processa horários padrões, que você pode ajustar conforme necessário
         this.processarHorariosPadroes();
 
+        // Verifica se a região foi selecionada e se o elemento de horários está oculto
         if (
             this.horarioElement.parentElement.classList.contains("mkt-hide")
             && (this.regiaoElement.value !== "" && this.regiaoElement.value !== "Selecione uma região")
