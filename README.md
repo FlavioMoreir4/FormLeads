@@ -36,5 +36,3 @@ Embora seja um projeto pessoal, valorizo muito o feedback e as contribuições d
 ## 🤝 Precisa de Ajuda ou Quer Sugerir Algo?
 
 Se encontrar algum problema ou tiver uma sugestão de melhoria, fique à vontade para abrir uma issue ou me enviar um pull request. Sua participação é fundamental para tornar este projeto ainda mais eficaz e adaptado às necessidades reais de quem trabalha com captação de leads!
-=======
-
